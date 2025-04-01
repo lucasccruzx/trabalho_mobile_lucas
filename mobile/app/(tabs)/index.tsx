@@ -34,12 +34,14 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Quem somos?</ThemedText>
+        <ThemedText type="subtitle">O que você verá nesse site?</ThemedText>
         <ThemedText>
-          Sou Lucas, proprietario, fundador e dono da Lucky's Motors, e com a ajuda da nossa equipe, você pode vir a loja e sair de moto nova!{' '}
+          Algumas motos e suas especificações{' '}
           
         </ThemedText>
       </ThemedView>
+
+      
     </ParallaxScrollView>
   );
 }
