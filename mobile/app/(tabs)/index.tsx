@@ -11,7 +11,7 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: '#8B0000', dark: '#1D3D47' }}
       headerImage={
         <Image
-          source={require('@/assets/images/motos.png')}
+          source={require('@/assets/images/emoji.png')}
           style={styles.reactLogo}
         />
       }>
@@ -20,16 +20,13 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Bem vindo a nossa loja!</ThemedText>
-        <ThemedText>
-          Mas oque seria esse site?
-          Somos uma loja de motos.
-        </ThemedText>
+        <ThemedText type="subtitle">Bem vindo!</ThemedText>
+        
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Para qual fim é esse site?</ThemedText>
         <ThemedText>
-          Apresentar alguns tipos de motos para venda e revenda.
+          Apresentar meu currículo.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
@@ -38,12 +35,7 @@ export default function HomeScreen() {
           Prazer, me chamo Lucas, estou no terceiro ano do ensino médio, e esse site é para um trabalho curricular.{' '}
       </ThemedText>
             </ThemedView>
-          
-          <ThemedText>
-            Clique no botão Explore para ir ver as motos
-          </ThemedText>
-          
-        
+           
     </ParallaxScrollView>
   );
 }
