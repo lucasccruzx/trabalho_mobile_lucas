@@ -16,6 +16,7 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
+<<<<<<< HEAD
         <ThemedText type="title">Olá</ThemedText>
         <HelloWave />
       </ThemedView>
@@ -36,6 +37,34 @@ export default function HomeScreen() {
       </ThemedText>
             </ThemedView>
            
+=======
+        <ThemedText type="title">Bem vindo a Lucky's Motors, a melhor loja de motos esportivas de Curitiba e região.</ThemedText>
+        
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">O que a loja vende?</ThemedText>
+        <ThemedText>
+          Desde motos normais até as esportivas
+         
+        </ThemedText>
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Simule seu Financiamento</ThemedText>
+        <ThemedText>
+          
+          Quer Financiar sua Moto? Simule o financiamento conosco.
+        </ThemedText>
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">O que você verá nesse site?</ThemedText>
+        <ThemedText>
+          Algumas motos e suas especificações{' '}
+          
+        </ThemedText>
+      </ThemedView>
+
+      
+>>>>>>> 1899c869d33a9e72bc1d2416950e65a67e96b30f
     </ParallaxScrollView>
   );
 }

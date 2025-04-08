@@ -10,9 +10,17 @@ export default function HomeScreen() {
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#8B0000', dark: '#1D3D47' }}
       headerImage={
+<<<<<<< HEAD
         <Image
           source={require('@/assets/images/emoji.png')}
           style={styles.reactLogo}
+=======
+        <IconSymbol
+          size={310}
+          color="#000000"
+          name="chevron.left.forwardslash.chevron.right"
+          style={styles.headerImage}
+>>>>>>> 1899c869d33a9e72bc1d2416950e65a67e96b30f
         />
       }>
       <ThemedView style={styles.titleContainer}>
