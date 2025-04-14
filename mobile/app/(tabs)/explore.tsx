@@ -5,22 +5,15 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
+
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#8B0000', dark: '#1D3D47' }}
       headerImage={
-<<<<<<< HEAD
         <Image
           source={require('@/assets/images/emoji.png')}
           style={styles.reactLogo}
-=======
-        <IconSymbol
-          size={310}
-          color="#000000"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
->>>>>>> 1899c869d33a9e72bc1d2416950e65a67e96b30f
         />
       }>
       <ThemedView style={styles.titleContainer}>
@@ -28,10 +21,14 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Bem vindo a nossa loja!</ThemedText>
+        <ThemedText type="subtitle">Bem vindo a parte de cordas da nossa loja!</ThemedText>
         <ThemedText>
-          Mas oque seria esse site?
-          Somos uma loja de motos.
+          Temos muitas variações de cordas
+          <Image
+          source={require('@/assets/images/nome-das-cordas-do-violão.png')}
+          style={styles.reactLogo}
+        />
+          
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>

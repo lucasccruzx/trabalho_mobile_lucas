@@ -16,55 +16,26 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-<<<<<<< HEAD
         <ThemedText type="title">Olá</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Bem vindo!</ThemedText>
+        <ThemedText type="subtitle">Bem vindo a Lucky's Music!</ThemedText>
         
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Para qual fim é esse site?</ThemedText>
+        <ThemedText type="subtitle">O que somos?</ThemedText>
         <ThemedText>
-          Apresentar meu currículo.
+          Uma loja de instrumentos musicais e acessórios.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Quem sou eu?</ThemedText>
+        <ThemedText type="subtitle">Quem somos?</ThemedText>
         <ThemedText>
-          Prazer, me chamo Lucas, estou no terceiro ano do ensino médio, e esse site é para um trabalho curricular.{' '}
+          Prazer, me chamo Lucas, sou dono e propríetario da loja{' '}
       </ThemedText>
             </ThemedView>
            
-=======
-        <ThemedText type="title">Bem vindo a Lucky's Motors, a melhor loja de motos esportivas de Curitiba e região.</ThemedText>
-        
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">O que a loja vende?</ThemedText>
-        <ThemedText>
-          Desde motos normais até as esportivas
-         
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Simule seu Financiamento</ThemedText>
-        <ThemedText>
-          
-          Quer Financiar sua Moto? Simule o financiamento conosco.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">O que você verá nesse site?</ThemedText>
-        <ThemedText>
-          Algumas motos e suas especificações{' '}
-          
-        </ThemedText>
-      </ThemedView>
-
-      
->>>>>>> 1899c869d33a9e72bc1d2416950e65a67e96b30f
     </ParallaxScrollView>
   );
 }
