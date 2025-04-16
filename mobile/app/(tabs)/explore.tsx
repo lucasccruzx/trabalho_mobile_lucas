@@ -1,13 +1,21 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, TouchableOpacity, Linking } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
+  const handlePressElixir = () => {
+    Linking.openURL('https://www.elixirstrings.com.br/#');
+  };
+
+  const handlePressDAddario = () => {
+    Linking.openURL('https://www.lojadaddario.com.br/d-addario/encordoamentos/violao-aco');
+  };
+
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#8B0000', dark: '#1D3D47' }}
+      headerBackgroundColor={{}}
       headerImage={
         <Image
           source={{ uri: 'https://img.pikbest.com/wp/202346/acoustic-guitar-blank-canvas-a-3d-rendering-with-room-for-customization_9632312.jpg!bw700' }}
@@ -16,7 +24,6 @@ export default function HomeScreen() {
       }
       contentContainerStyle={styles.container}
     >
-      
       <ThemedView style={[styles.stepContainer, styles.centeredContent]}>
         <ThemedText type="subtitle">Bem vindo a parte de cordas da nossa loja!</ThemedText>
         <ThemedText style={styles.centeredText}>
@@ -26,22 +33,25 @@ export default function HomeScreen() {
           source={require('@/assets/images/nome-das-cordas-do-violão.png')}
           style={[styles.imageBelowText, styles.centeredImage]}
         />
+        <ThemedText type="subtitle">A seguir, você verá algumas lojas parceiras da nossa loja</ThemedText>
+        <ThemedText type="subtitle">Você pode visita-las clicando nos botões abaixo</ThemedText>
+        
+        {/* Botão Elixir */}
+        <TouchableOpacity 
+          style={styles.button} 
+          onPress={handlePressElixir}
+        >
+          <ThemedText style={styles.buttonText}>Elixir Strings</ThemedText>
+        </TouchableOpacity>
+        
+        {/* Botão D'Addario */}
+        <TouchableOpacity 
+          style={styles.button} 
+          onPress={handlePressDAddario}
+        >
+          <ThemedText style={styles.buttonText}>D'Addario</ThemedText>
+        </TouchableOpacity>
       </ThemedView>
-      <ThemedView style={[styles.stepContainer, styles.centeredContent]}>
-        <ThemedText type="subtitle">Para qual fim é esse site?</ThemedText>
-        <ThemedText style={styles.centeredText}>
-          Apresentar alguns tipos de motos para venda e revenda.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={[styles.stepContainer, styles.centeredContent]}>
-        <ThemedText type="subtitle">Quem sou eu?</ThemedText>
-        <ThemedText style={styles.centeredText}>
-          Prazer, me chamo Lucas, estou no terceiro ano do ensino médio, e esse site é para um trabalho curricular.
-        </ThemedText>
-      </ThemedView>
-      <ThemedText style={[styles.centeredText, styles.exploreText]}>
-        Clique no botão Explore para ir ver as motos
-      </ThemedText>
     </ParallaxScrollView>
   );
 }
@@ -61,12 +71,14 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   headerImage: {
-    height: 200,
+    height: '100%',
     width: '100%',
     bottom: 0,
     left: 0,
     position: 'absolute',
     resizeMode: 'cover',
+    top: 0,
+    right: 0,
   },
   imageBelowText: {
     width: '100%',
@@ -86,5 +98,20 @@ const styles = StyleSheet.create({
   exploreText: {
     marginTop: 20,
     marginBottom: 20,
+  },
+  // Estilos do botão
+  button: {
+    backgroundColor: '#8B0000', // Vermelho escuro
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    marginTop: 20,
+    width: '80%',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 });
