@@ -14,7 +14,7 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       }
-      contentContainerStyle={styles.contentContainer} // Adicionado para centralizar conteúdo
+      contentContainerStyle={styles.contentContainer}
     >
       <ThemedView style={[styles.stepContainer, styles.centeredContainer]}>
         <ThemedText type="subtitle">Bem vindo a Lucky's Music!</ThemedText>
@@ -37,34 +37,34 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   contentContainer: {
-    alignItems: 'center', // Centraliza os itens horizontalmente
-    paddingHorizontal: 16, // Adiciona um pouco de padding nas laterais
+    alignItems: 'center',
+    paddingHorizontal: 16,
   },
   centeredContainer: {
-    alignItems: 'center', // Centraliza os itens horizontalmente dentro de cada container
-    width: '100%', // Garante que o container ocupe toda a largura disponível
+    alignItems: 'center',
+    width: '100%',
   },
   centeredText: {
-    textAlign: 'center', // Centraliza o texto
+    textAlign: 'center',
   },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    marginTop: 20, // Adiciona espaço no topo
-    marginBottom: 20, // Adiciona espaço na base
+    marginTop: 20,
+    marginBottom: 20,
   },
   stepContainer: {
     gap: 8,
-    marginBottom: 20, // Aumentei o marginBottom para melhor espaçamento
-    paddingHorizontal: 20, // Adiciona padding horizontal
+    marginBottom: 20,
+    paddingHorizontal: 20,
   },
   reactLogo: {
     height: 178,
     width: 290,
-    bottom: 0,
-    left: 0,
     position: 'absolute',
-    alignSelf: 'center', // Centraliza a imagem
+    top: '50%', 
+    left: '50%',
+    transform: [{ translateX: -145 }, { translateY: -89 }],
   },
 });

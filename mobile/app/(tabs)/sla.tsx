@@ -1,68 +1,99 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
+import { Image, StyleSheet, View, TouchableOpacity, Linking } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { FontAwesome } from '@expo/vector-icons'; // Importe o ícone do Instagram
 
 export default function HomeScreen() {
+  const openInstagram = () => {
+    Linking.openURL('https://www.instagram.com/luc.cruz_');
+  };
+
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#8B0000', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: '#000000', dark: '#1D3D47' }}
       headerImage={
-        <Image
-          source={require('@/assets/images/emoji.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Olá</ThemedText>
-        <HelloWave />
+        <View style={styles.headerImageContainer}>
+          <Image
+            source={{ uri: 'https://lh3.googleusercontent.com/a/ACg8ocK67zr7PxhnxuauYYHSM2cKPy4sultbWtD94jR6iJLTyV07jnA=s360-c-no' }}
+            style={styles.profileImage}
+          />
+        </View>
+      }
+      contentContainerStyle={styles.contentContainer}
+    >
+      <ThemedView style={[styles.stepContainer, styles.centeredContainer]}>
+        <ThemedText type="subtitle">Bem vindo a Lucky's Music!</ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Bem vindo a nossa loja!</ThemedText>
-        <ThemedText>
-          Mas oque seria esse site?
-          Somos uma loja de motos.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Para qual fim é esse site?</ThemedText>
-        <ThemedText>
-          Apresentar alguns tipos de motos para venda e revenda.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
+      
+      <ThemedView style={[styles.stepContainer, styles.centeredContainer]}>
         <ThemedText type="subtitle">Quem sou eu?</ThemedText>
-        <ThemedText>
-          Prazer, me chamo Lucas, estou no terceiro ano do ensino médio, e esse site é para um trabalho curricular.{' '}
-      </ThemedText>
-            </ThemedView>
-          
-          <ThemedText>
-            Clique no botão Explore para ir ver as motos
-          </ThemedText>
-          
-        
+        <ThemedText style={styles.centeredText}>
+          Me chamo Lucas, estou no 3° ano do ensino médio e esse é um site de um trabalho trimestral
+        </ThemedText>
+      </ThemedView>
+      
+      <ThemedView style={[styles.stepContainer, styles.centeredContainer]}>
+        <ThemedText type="subtitle">Redes Socias</ThemedText>
+        <TouchableOpacity style={styles.instagramButton} onPress={openInstagram}>
+          <FontAwesome name="instagram" size={24} color="white" />
+          <ThemedText style={styles.instagramText}>@luc.cruz_</ThemedText>
+        </TouchableOpacity>
+      </ThemedView>
+      
+      <ThemedView style={[styles.stepContainer, styles.centeredContainer]}>
+        <ThemedText type="subtitle">Quem somos?</ThemedText>
+        <ThemedText style={styles.centeredText}>
+          Prazer, me chamo Lucas, sou dono e proprietário da loja
+        </ThemedText>
+      </ThemedView>
     </ParallaxScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  contentContainer: {
     alignItems: 'center',
-    gap: 8,
+    paddingHorizontal: 16,
+  },
+  centeredContainer: {
+    alignItems: 'center',
+    width: '100%',
+  },
+  centeredText: {
+    textAlign: 'center',
   },
   stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+    gap: 16,
+    marginBottom: 20,
+    paddingHorizontal: 20,
+    alignItems: 'center',
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  headerImageContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 60,
+  },
+  profileImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    borderWidth: 3,
+    borderColor: '#FFFFFF',
+  },
+  instagramButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#E1306C',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 25,
+    marginTop: 10,
+  },
+  instagramText: {
+    color: 'white',
+    marginLeft: 10,
+    fontWeight: 'bold',
   },
 });
