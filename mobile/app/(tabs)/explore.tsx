@@ -13,10 +13,6 @@ export default function HomeScreen() {
     Linking.openURL('https://www.lojadaddario.com.br/d-addario/encordoamentos/violao-aco');
   };
 
-  const handlePressGiannini = () => {
-    Linking.openURL('https://www.giannini.com.br/produtos/categoria/encordoamentos/');
-  };
-
   return (
     <ParallaxScrollView
       headerBackgroundColor={{}}
@@ -54,14 +50,6 @@ export default function HomeScreen() {
           onPress={handlePressDAddario}
         >
           <ThemedText style={styles.buttonText}>D'Addario</ThemedText>
-        </TouchableOpacity>
-
-        {/* Novo Botão Giannini */}
-        <TouchableOpacity 
-          style={styles.button} 
-          onPress={handlePressGiannini}
-        >
-          <ThemedText style={styles.buttonText}>Giannini</ThemedText>
         </TouchableOpacity>
       </ThemedView>
     </ParallaxScrollView>

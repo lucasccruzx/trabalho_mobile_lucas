@@ -2,12 +2,19 @@ import { Image, StyleSheet, View, TouchableOpacity, Linking } from 'react-native
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { FontAwesome } from '@expo/vector-icons'; // Importe o ícone do Instagram
+import { FontAwesome } from '@expo/vector-icons'; // Importe o ícone do Instagram e GitHub
+
+
 
 export default function HomeScreen() {
   const openInstagram = () => {
     Linking.openURL('https://www.instagram.com/luc.cruz_');
   };
+
+  const openGitHub = () => {
+    Linking.openURL('https://github.com/lucasccruzx');
+  };
+  
 
   return (
     <ParallaxScrollView
@@ -23,7 +30,7 @@ export default function HomeScreen() {
       contentContainerStyle={styles.contentContainer}
     >
       <ThemedView style={[styles.stepContainer, styles.centeredContainer]}>
-        <ThemedText type="subtitle">Bem vindo a Lucky's Music!</ThemedText>
+        <ThemedText type="subtitle">Lucas Cerqueira da Cruz</ThemedText>
       </ThemedView>
       
       <ThemedView style={[styles.stepContainer, styles.centeredContainer]}>
@@ -34,18 +41,15 @@ export default function HomeScreen() {
       </ThemedView>
       
       <ThemedView style={[styles.stepContainer, styles.centeredContainer]}>
-        <ThemedText type="subtitle">Redes Socias</ThemedText>
+        <ThemedText type="subtitle">Redes Sociais</ThemedText>
         <TouchableOpacity style={styles.instagramButton} onPress={openInstagram}>
           <FontAwesome name="instagram" size={24} color="white" />
-          <ThemedText style={styles.instagramText}>@luc.cruz_</ThemedText>
+          <ThemedText style={styles.instagramText}>Instagram</ThemedText>
         </TouchableOpacity>
-      </ThemedView>
-      
-      <ThemedView style={[styles.stepContainer, styles.centeredContainer]}>
-        <ThemedText type="subtitle">Quem somos?</ThemedText>
-        <ThemedText style={styles.centeredText}>
-          Prazer, me chamo Lucas, sou dono e proprietário da loja
-        </ThemedText>
+        <TouchableOpacity style={styles.githubButton} onPress={openGitHub}>
+          <FontAwesome name="github" size={24} color="white" />
+          <ThemedText style={styles.githubText}>GitHub</ThemedText>
+        </TouchableOpacity>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -92,6 +96,20 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   instagramText: {
+    color: 'white',
+    marginLeft: 10,
+    fontWeight: 'bold',
+  },
+  githubButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#333333',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 25,
+    marginTop: 10,
+  },
+  githubText: {
     color: 'white',
     marginLeft: 10,
     fontWeight: 'bold',
